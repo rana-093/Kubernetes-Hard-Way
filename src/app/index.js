@@ -13,14 +13,11 @@ const dbConfig = {
     database: process.env.DB_DATABASE,
 };
 
-console.log(`Host is: ${process.env.DB_HOST}`);
-
-// Create MySQL connection pool
 const pool = mysql.createPool(dbConfig);
 
 // Fetch employees from the database
 app.get('/employees', (req, res) => {
-    pool.query('SELECT * FROM employee', (error, results) => {
+    pool.query('SELECT * FROM employees', (error, results) => {
         if (error) throw error;
         res.json(results);
     });
