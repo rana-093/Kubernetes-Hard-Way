@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30080
+      nodePort: 31180
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
         - name: node-app-container
-          image: ranam093/k3s:1.0
+          image: ranam093/k3s:2.0
           ports:
             - containerPort: 3000
