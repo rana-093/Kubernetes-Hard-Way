@@ -13,6 +13,8 @@ const dbConfig = {
     database: process.env.DB_DATABASE,
 };
 
+console.log(`Host is: ${process.env.DB_HOST}`);
+
 // Create MySQL connection pool
 const pool = mysql.createPool(dbConfig);
 
