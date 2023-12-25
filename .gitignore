@@ -1,0 +1,8 @@
+*.log
+.vagrant/
+
+src/app/node_modules/
+# src/app/node_modules/dotenv
+
+src/app/.env
+src/app/package-lock.json
