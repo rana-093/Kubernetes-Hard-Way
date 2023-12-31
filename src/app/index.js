@@ -17,6 +17,7 @@ const pool = mysql.createPool(dbConfig);
 
 // Fetch employees from the database
 app.get('/employees', (req, res) => {
+    console.log(`I have been called from master`);
     pool.query('SELECT * FROM employees', (error, results) => {
         if (error) throw error;
         res.json(results);
