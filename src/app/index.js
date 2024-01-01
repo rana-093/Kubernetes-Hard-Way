@@ -7,17 +7,16 @@ const port = 3000;
 
 // MySQL configuration
 const dbConfig = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
+    host: db-service.default.svc.cluster.local,
+    user: admin,
+    password: admin,
+    database: employees,
 };
 
 const pool = mysql.createPool(dbConfig);
 
 // Fetch employees from the database
 app.get('/employees', (req, res) => {
-    console.log(`I have been called from master`);
     pool.query('SELECT * FROM employees', (error, results) => {
         if (error) throw error;
         res.json(results);

@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
         - name: node-app-container
-          image: ranam093/k3s:2.0
+          image: ranam093/k3s:4.0
           ports:
             - containerPort: 3000
